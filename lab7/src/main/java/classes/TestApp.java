@@ -6,21 +6,17 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 
-
-public class AppSecond extends Application {
+public class TestApp extends Application {
     public int count = 0;
 
 
@@ -193,6 +189,7 @@ public class AppSecond extends Application {
         borderPane1.getChildren().add(leftPane);
 
         Scene scene = new Scene(borderPane1, 1200, 600);
+
         stage.setTitle("Graphic Key");
         stage.setScene(scene);
         stage.show();
