@@ -1,29 +1,24 @@
 package classes;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Optional;
 
 
-public class App extends Application {
+public class FirstApp extends Application {
     public int count = 0;
 
 
@@ -34,13 +29,6 @@ public class App extends Application {
                 elem.status = false;
             }
         }
-    }
-
-    public static void printArray(ArrayList<Integer> arrays){
-        for(int i : arrays){
-            System.out.print(i + " ");
-        }
-        System.out.println();
     }
 
     @Override
@@ -117,7 +105,7 @@ public class App extends Application {
         buttonSubmit.setOnAction(actionEvent -> {
             Answer answer1 = new Answer(arrayList, textField.getText());
             boolean check = false;
-            for(Answer i : answers){
+            for (Answer i : answers) {
                 if(i.arrayList.equals(answer1.arrayList) && i.str.equals(answer1.str)){
                     check = true;
                     Text text = new Text("Success!");
@@ -128,12 +116,12 @@ public class App extends Application {
                     break;
                 }
             }
-            if(!check) {
+            if (!check) {
                 Alert alert1 = new Alert(Alert.AlertType.WARNING, "Wrong, tries left: " + (2 - count));
                 alert1.showAndWait();
                 count++;
             }
-            if(count == 3) {
+            if (count == 3) {
                 Alert alert2 = new Alert(Alert.AlertType.INFORMATION, "There are no tries left. You should wait for 3 seconds.");
                 alert2.showAndWait().ifPresent(response -> {
                     if (response == ButtonType.OK) {
@@ -156,7 +144,7 @@ public class App extends Application {
         Menu menu = new Menu("App");
         MenuItem menuItem = new MenuItem("Exit");
         menuItem.setOnAction(x -> {
-            System.exit(1);
+            System.exit(11);
         });
         menu.getItems().add(menuItem);
         menuBar.getMenus().add(menu);
@@ -181,7 +169,6 @@ public class App extends Application {
         mainPane.setStyle("-fx-background-color: #fff0db");
         mainPane.setTop(menuBar);
         mainPane.setLeft(leftPane);
-        mainPane.setRight(rightPane);
         mainPane.setBottom(buttonRefresh);
 
         Scene scene = new Scene(mainPane, 600, 600);
@@ -190,7 +177,5 @@ public class App extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) {
-        launch();
-    }
+    public static void main(String[] args) { launch(); }
 }
