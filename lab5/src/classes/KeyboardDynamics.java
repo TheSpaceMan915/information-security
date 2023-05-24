@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 
-public class DynamicsHelper {
+public class KeyboardDynamics {
     private final int wordLength = 5;
     private final long[] arrInputTimes = new long[wordLength];
     private final List<String> listWords = new ArrayList<>();
@@ -72,7 +72,7 @@ public class DynamicsHelper {
 
     public static void main(String[] args) {
         // the first try to get keystroke dynamics
-        DynamicsHelper dynamics = new DynamicsHelper();
+        KeyboardDynamics dynamics = new KeyboardDynamics();
         System.out.println("Enter a word:");
         dynamics.calculateInputTimes();
         double firstIdealTime = dynamics.calculateIdealTime();
@@ -90,6 +90,6 @@ public class DynamicsHelper {
         System.out.println(secondDynamics);
         dynamics.printListWords();
 
-        DynamicsHelper.authenticateUser(firstDynamics, secondDynamics);
+        KeyboardDynamics.authenticateUser(firstDynamics, secondDynamics);
     }
 }
